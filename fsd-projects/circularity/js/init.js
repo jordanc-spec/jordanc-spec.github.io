@@ -21,7 +21,7 @@ var init = function (window) {
         
         // TODO 1 : Declare and initialize our variables
         var circle; // variable to hold a single circle when creating circles / iterating
-        var circles = [0, 1, 2, 3, 4]; // variable to store all circles in an array
+        var circles = []; // variable to store all circles in an array
 
 
         // TODO 2 : Create a function that draws a circle 
@@ -34,16 +34,12 @@ var init = function (window) {
    
 
         // TODO 3 : Call the drawCircle() function
-        physikz.updatePosition(circles[0]);
-        physikz.updatePosition(circles[1]);
-        physikz.updatePosition(circles[2]);
-        physikz.updatePosition(circles[3]);
-        physikz.updatePosition(circles[4]);
+        
         
 
 
         // TODO 7 : Use a loop to create multiple circles
-        for (var i = 0; i < 25; i++) {
+        for (var i = 0; i < 100; i++) {
         drawCircle();
 }
 
@@ -79,22 +75,22 @@ var init = function (window) {
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
         */
-        game.checkCirclePosition = function(circle) {
-
-            // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-            if ( circle.x > canvas.width ) {
-                circle.x = 0;
-            }
+        
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
             game.checkCirclePosition = function(circle){
-            if ( circle.x = canvas.width ) {
-                return circle.x = 0;
+            if (circle.x > canvas.width) {
+                 circle.x = 0;
             }
-            else if ( circle.y > canvas.height ) {
-                return circle.y = 0;
+            if (circle.y > canvas.height) {
+                 circle.y = 0;
             }
-            if 
+            if (circle.y < 0) {
+                circle.y = canvas.height;
+            }
+            if (circle.x < 0) {
+                circle.x = canvas.width;
+            }
 
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
